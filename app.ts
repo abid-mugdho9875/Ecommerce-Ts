@@ -10,10 +10,10 @@ import morgan from "morgan";
 import connectDB from "./db/connect";
 
 import authRouter from "./routes/AuthRoutes";
-// import userRouter from './routes/userRoutes';
-// import productRouter from './routes/productRoutes';
-// import reviewRouter from './routes/reviewRoutes';
-// import orderRouter from './routes/orderRoutes';
+import orderRouter from "./routes/OrderRoutes";
+import productRouter from "./routes/ProductRoutes";
+import reviewRouter from "./routes/ReviewRoutes";
+import userRouter from "./routes/UserRoutes";
 
 import errorHandlerMiddleware from "./middleware/ErrorHandler";
 import notFoundMiddleware from "./middleware/NotFound";
@@ -32,10 +32,10 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/auth", authRouter);
-// app.use('/api/v1/users', userRouter);
-// app.use('/api/v1/products', productRouter);
-// app.use('/api/v1/reviews', reviewRouter);
-// app.use('/api/v1/orders', orderRouter);
+app.use("/api/v1/users", userRouter);
+app.use("/api/v1/products", productRouter);
+app.use("/api/v1/reviews", reviewRouter);
+app.use("/api/v1/orders", orderRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
