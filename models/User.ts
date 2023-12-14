@@ -8,6 +8,7 @@ export interface IUser extends Document {
   password: string;
   role: "admin" | "user";
   comparePassword(candidatePassword: string): Promise<boolean>;
+  _id: mongoose.Types.ObjectId;
 }
 
 const emailValidator: [(value: string) => boolean, string] = [

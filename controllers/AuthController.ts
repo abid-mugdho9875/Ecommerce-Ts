@@ -11,7 +11,7 @@ interface TokenUser {
 }
 
 const createTokenUser = (user: IUser): TokenUser => {
-  return { name: user.name, userId: user._id, role: user.role };
+  return { name: user.name, userId: user._id.toString(), role: user.role };
 };
 
 const register = async (req: Request, res: Response): Promise<void> => {
