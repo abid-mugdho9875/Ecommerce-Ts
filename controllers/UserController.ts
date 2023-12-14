@@ -18,11 +18,19 @@ const createTokenUser = (user: IUser) => ({
 });
 
 const checkPermissions = (
+<<<<<<< HEAD
   requestUser: { role: string; _id?: mongoose.Types.ObjectId },
   resourceUserId: string
 ): void => {
   if (requestUser.role === "admin") return;
   if (requestUser._id && requestUser._id.toString() === resourceUserId) return;
+=======
+  requestUser: { role: string; _id: mongoose.Types.ObjectId },
+  resourceUserId: string
+): void => {
+  if (requestUser.role === "admin") return;
+  if (requestUser._id.toString() === resourceUserId) return;
+>>>>>>> abc8520357695c688b160f42b1ebe1b93b6a1be5
   throw new UnauthorizedError("Not authorized to access this route");
 };
 
