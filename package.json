@@ -3,22 +3,27 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "ts-node app.ts",
+    "deploy": "yarn install && yarn build && yarn migrate"
+  },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.6",
+    "@types/http-status-codes": "^1.2.0",
     "@types/mongodb": "^4.0.7",
+    "@types/morgan": "^1.9.9",
     "@types/multer": "^1.4.11",
     "@types/validator": "^13.11.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@types/cookie-parser": "^1.4.6",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/express-fileupload": "^1.4.4",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/mongoose": "^5.11.97",
-    "@types/morgan": "^1.9.9",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",

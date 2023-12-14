@@ -4,7 +4,7 @@ dotenv.config();
 import cookieParser from "cookie-parser";
 import express from "express";
 import "express-async-errors";
-import fileUpload from "express-fileupload";
+// import fileUpload from "express-fileupload";
 import morgan from "morgan";
 
 import connectDB from "./db/connect";
@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
 
 app.use(express.static("./public"));
-app.use(fileUpload());
+// app.use(fileUpload());
 
 app.get("/", (req, res) => {
   res.send("ecommerce");
